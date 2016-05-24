@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/octopitus/promise-interval.git"
+    "url": "git+https://github.com/octopitus/coron.git"
   },
   "author": "Luy Tran <thailuy86@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/octopitus/promise-interval/issues"
+    "url": "https://github.com/octopitus/coron/issues"
   },
-  "homepage": "https://github.com/octopitus/promise-interval#readme",
+  "homepage": "https://github.com/octopitus/coron#readme",
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-plugin-transform-runtime": "^6.9.0",
