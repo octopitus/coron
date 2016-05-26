@@ -2,7 +2,13 @@
 
 # Coron
 
-Generator based cron-like scheduler for node and the browser. Promise, Generator & async/await supported.
+Mordern flow control cron-like scheduler. Designed for humans. Promise, generator & async/await supported. Works nicely both for Node and the browser.
+
+## Features
+
+- Based in co-routines, generators and promises.
+- Write human readable expression.
+- Flexible, minimal API.
 
 ## Usage
 
@@ -17,12 +23,16 @@ npm install coron
 ### Examples
 
 ```js
-import createSchedule from 'coron';
+import createSchedule from 'hm.js';
 
-// Execute a cron job every 5 Minutes
-const schedule = createSchedule('*/5 * * * *', function() {
-  //
+// Execute a job every monday morning
+const scheduler = createSchedule('every monday morning', function* () {
+  const a = yield Promise.resolve(1);
+  const b = yield Promise.resolve(2);
+  const c = yield Promise.resolve(3);
+
+  console.log(a + b + c); // 6
 });
 
-schedule.start();
+scheduler.start();
 ```
