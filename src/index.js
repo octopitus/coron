@@ -1,19 +1,12 @@
-const CronTime = require('./CronTime');
+const createCronTime = require('./CronTime');
 const Scheduler = require('./Scheduler');
 
-function createScheduler(cronTime, callback) {
+function createScheduler(humanDate, callback) {
   if (typeof callback !== 'function') {
     throw new TypeError(`callback must be a function. ${typeof callback} was given.`);
   }
 
-  if (typeof cronTime === 'string') {
-    try {
-      cronTime = CronTime.parse(cronTime);
-    } catch(e) {
-      throw e;
-    }
-  }
-
+  const cronTime = createCronTime(humanDate);
   return new Scheduler(cronTime, callback);
 };
 

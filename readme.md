@@ -1,6 +1,6 @@
 > Still in development
 
-# Coron
+# hm.js
 
 Mordern flow control cron-like scheduler. Designed for humans. Promise, generator & async/await supported. Works nicely both for Node and the browser.
 
@@ -17,7 +17,7 @@ Mordern flow control cron-like scheduler. Designed for humans. Promise, generato
 You can install using `npm`.
 
 ```bash
-npm install coron
+npm install hm.js
 ```
 
 ### Examples

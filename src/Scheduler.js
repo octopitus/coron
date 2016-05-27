@@ -7,10 +7,9 @@ function call(delay) {
   return promise;
 }
 
-function *loop(callback, delay) {
-  while(true) {
-    // const delay = cronTime.nextDate() - cronTime.currentDate();
-    yield call.call(this, delay);
+function *loop(callback, cronTime) {
+  while(cronTime.hasNext()) {
+    yield call.call(this, cronTime.next());
 
     this.setState({ index: this.state.index + 1 });
 
@@ -66,9 +65,9 @@ const initialState = {
 };
 
 class Scheduler {
-  constructor(delay, callback) {
+  constructor(cronTime, callback) {
     const callbackFunc = createRunner.call(this, callback);
-    const eventSource = loop.bind(this, callbackFunc, delay);
+    const eventSource = loop.bind(this, callbackFunc, cronTime);
     this.runEventLoop = createRunner.call(this, eventSource);
     this.state = initialState;
 
